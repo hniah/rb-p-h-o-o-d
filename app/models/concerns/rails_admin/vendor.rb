@@ -12,6 +12,7 @@ module Concerns::RailsAdmin::Vendor
         field :address
         field :phone
         field :fax
+        field :picture
         field :longitude
         field :latitude
       end
