@@ -27,6 +27,7 @@ gem 'devise'
 gem 'rails_admin'
 gem 'geocoder'
 gem 'grape'
+gem 'paperclip', '~> 4.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
