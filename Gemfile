@@ -28,6 +28,8 @@ gem 'rails_admin'
 gem 'geocoder'
 gem 'grape'
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '~> 1.5.7'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,4 +56,5 @@ group :development, :test do
   gem 'shoulda'
   gem 'awesome_print'
   gem 'capybara' # add "require 'capybara/rspec'" to spec_helper
+  gem 'dotenv-rails'
 end
