@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150309093202) do
     t.string   "address"
     t.string   "phone"
     t.string   "fax"
-    t.string   "longitude"
-    t.string   "latitude"
+    t.float    "longitude"
+    t.float    "latitude"
     t.string   "type"
   end
 
