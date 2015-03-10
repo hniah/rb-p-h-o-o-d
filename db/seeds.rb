@@ -8,7 +8,7 @@
 puts '== Creating Admin =='
 admin = User.find_by_email 'admin@example.com'
 unless admin
-  admin = User.create!(
+  admin = Admin.create!(
       name: 'Admin',
       email: 'admin@example.com',
       password: '123123123'
