@@ -6,7 +6,8 @@ RSpec.describe V1::Vendors do
     let(:api_vendors) { JSON.parse(response.body)['data'] }
 
     it 'returns a list of vendor' do
-      get '/api/v1/vendors'
+      get '/api/v1/vendors?api_key='+ENV['API_KEY']
+
       expect(api_vendors.count).to eq vendors.count
       expect(api_vendors.first['name']).to eq vendors.first.name
     end
