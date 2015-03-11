@@ -6,4 +6,5 @@ class API < Grape::API
   version 'v1', using: :path
   format :json
   mount V1::Vendors
+  mount V1::Suggestions
 end
