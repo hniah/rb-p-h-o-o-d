@@ -28,3 +28,6 @@
 
 # Ignore POW configuration
 .powrc
+
+# Ignore .env file
+.env
