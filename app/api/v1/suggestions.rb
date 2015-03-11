@@ -10,11 +10,16 @@ module V1
       end
 
       post do
-        Suggestion.create({
+        suggestion = Suggestion.new({
             name:params[:name],
             message:params[:message],
             vendor_id:params[:vendor_id]
         })
+        if suggestion.save
+          ApiHelper.response(200, 'Suggestion has inserted successfully')
+        else
+          ApiHelper.response(500, 'Suggestion has inserted unsuccessfully')
+        end
       end
     end
   end
