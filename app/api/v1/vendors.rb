@@ -4,7 +4,12 @@ module V1
       desc 'List all of Vendor'
 
       get do
-        ApiHelper.response(200, '', Vendor.all)
+        vendors = Vendor.all
+        vendors_filter = []
+        vendors.each do |vendor|
+          vendors_filter << ApiHelper.filter_vendor(vendor)
+        end
+        ApiHelper.response(200, '', vendors_filter)
       end
     end
   end
