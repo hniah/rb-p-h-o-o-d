@@ -8,5 +8,10 @@ FactoryGirl.define do
     phone '6787 3640'
     longitude 1.355223
     latitude 103.928737
+
+
+  end
+  after(:create)  do |vendor|
+    DataVendor.create(reward_detail: 'Lorem', reward_image: '', vendor_id: vendor.id)
   end
 end
