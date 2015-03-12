@@ -15,6 +15,7 @@ module Concerns::RailsAdmin::Vendor
         field :picture
         field :longitude
         field :latitude
+        field :data_vendor
       end
 
       list do
