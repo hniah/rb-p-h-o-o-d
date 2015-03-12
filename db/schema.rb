@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311094815) do
+ActiveRecord::Schema.define(version: 20150311100640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_vendors", force: :cascade do |t|
+    t.text     "reward_detail"
+    t.string   "reward_image_file_name"
+    t.string   "reward_image_content_type"
+    t.integer  "reward_image_file_size"
+    t.datetime "reward_image_updated_at"
+    t.integer  "vendor_id"
+  end
 
   create_table "suggestions", force: :cascade do |t|
     t.string  "name"
