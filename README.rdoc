@@ -1,28 +1,64 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+List of API Hoosh Project.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Get list of vendors
+    - URL: /api/v1/vendors?api+key=...
+    - Response: {
+                  error_code: 200,
+                  message: "",
+                  data: [
+                  {
+                      id: 1,
+                      email: "vendor1@yahoo.com",
+                      name: "Vendor1",
+                      address: "25 Main St, Cooperstown, NY",
+                      phone: "321321321123",
+                      fax: "312321321",
+                      description: "dasdadsa",
+                      picture: "",
+                      longitude: "-74.922749",
+                      latitude: "42.700124"
+                  }
+               }
+
+
+2. Get reward of vendor
+    - URL: /api/v1/vendors/vendor_id/reward?api+key=...
+    - Ex: /api/v1/vendors/10/reward?api+key=...
+    - Response
+        + Success: {
+                      error_code: 200,
+                      message: "",
+                      data: {
+                          id: 1,
+                          reward_detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                          reward_image: "http://hoosh-develop.s3.amazonaws.com/Users/anthonyfwz/workspace/rubys/hoosh/public/data_vendors/reward_images/1/original_hollywood5.jpg?1426132200"
+                      }
+                  }
+        + Fail: { error_code: 404, message: "Not found", data: null }
+
+
+3. Post suggestion
+    - URL: /api/v1/suggestion?api_key=...
+    - Post params:
+        + name
+        + message
+        + vendor_id
+    - Response
+        + Success: { error_code: 200, message: "Suggestion has inserted successfully", data: null }
+        + Fail: { error_code: 500, message: "Suggestion has inserted unsuccessfullyd", data: null }
+
+
+4. Insert consumer
+    - URL: /api/v1/consumer?api_key...
+    - Post params:
+        + name
+        + email
+        + device_token : id of device
+        + platform : andriod or ios or window
+    - Response
+        + Success: { error_code: 200, message: "Consumer has inserted successfully", data: null }
+        + Fail: { error_code: 500, message: "Consumer has inserted unsuccessfullyd", data: null }
+
