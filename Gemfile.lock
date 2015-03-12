@@ -95,6 +95,8 @@ GEM
     dotenv (2.0.0)
     dotenv-rails (2.0.0)
       dotenv (= 2.0.0)
+    enumerize (0.10.1)
+      activesupport (>= 3.2)
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.4.0)
@@ -296,6 +298,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
+  enumerize
   factory_girl_rails
   geocoder
   grape
