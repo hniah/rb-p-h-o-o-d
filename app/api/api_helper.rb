@@ -18,5 +18,13 @@ class ApiHelper
     filter['latitude'] = vendor.latitude
     return filter
   end
+
+  def self.filter_reward_vendor(data_vendor)
+    filter = {}
+    filter['id'] = data_vendor.id
+    filter['reward_detail'] = data_vendor.reward_detail
+    filter['reward_image'] = data_vendor.reward_image
+    return filter
+  end
 end
 

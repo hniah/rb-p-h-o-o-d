@@ -11,6 +11,21 @@ module V1
         end
         ApiHelper.response(200, '', vendors_filter)
       end
+
+
+      desc 'Get reward of vendor'
+      params do
+        requires :id, type: Integer
+      end
+      get ':id/reward' do
+        ApiHelper.response(404, 'Not found', )
+        data = DataVendor.find_by_vendor_id(params[:id])
+        if data.present?
+          ApiHelper.response(200, '', ApiHelper.filter_reward_vendor(data))
+        else
+          ApiHelper.response(404, 'Not found', )
+        end
+      end
     end
   end
 end
