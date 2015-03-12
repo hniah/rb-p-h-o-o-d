@@ -7,4 +7,5 @@ class API < Grape::API
   format :json
   mount V1::Vendors
   mount V1::Suggestions
+  mount V1::Consumers
 end
