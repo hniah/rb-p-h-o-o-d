@@ -60,5 +60,24 @@ List of API Hoosh Project.
         + platform : andriod or ios or window
     - Response
         + Success: { error_code: 200, message: "Consumer has inserted successfully", data: null }
-        + Fail: { error_code: 500, message: "Consumer has inserted unsuccessfullyd", data: null }
+        + Fail: { error_code: 500, message: "Consumer has inserted unsuccessfully", data: null }
 
+
+5. Insert social post
+    - URL: /api/v1/consumer/social?api_key...
+    - Post params:
+        + consumer_id
+        + vendor_id
+        + message
+        + social_type
+        + picture
+    - Response
+        + Success: {
+                        error_code: 200,
+                        message: "Post was inserted successfully",
+                        data:{  id: 1,
+                                reward_detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                                reward_image: "http://hoosh-develop.s3.amazonaws.com/Users/anthonyfwz/workspace/rubys/hoosh/public/data_vendors/reward_images/1/original_hollywood5.jpg?1426132200"
+                        }
+                   }
+        + Fail: { error_code: 500, message: "Post was inserted unsuccessfully", data: null }
