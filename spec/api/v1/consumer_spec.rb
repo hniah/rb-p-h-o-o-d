@@ -27,7 +27,7 @@ RSpec.describe V1::Consumers do
     let!(:vendor) { create :vendor}
 
     it 'return reward of vendor' do
-      post '/api/v1/consumer/social', {api_key: ENV['API_KEY'], consumer_id: consumer.id, vendor_id: vendor.id, message: 'Testing post', social_type: :facebook}
+      post '/api/v1/consumer/social', {api_key: ENV['API_KEY'], consumer_id: consumer.id, vendor_id: vendor.id, message: 'Testing post', social_type: :facebook, picture: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test-small.png'), 'images/png')}
 
       expect(Post.first.message).to eq 'Testing post'
       expect(reward['reward_detail']).to eq vendor.data_vendor.reward_detail

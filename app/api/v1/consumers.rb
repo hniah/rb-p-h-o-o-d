@@ -43,15 +43,15 @@ module V1
             consumer_id:  params[:consumer_id],
             vendor_id:    params[:vendor_id],
             message:      params[:message],
-            picture:      params[:picture],
-            social_type:  params[:social_type]
+            social_type:  params[:social_type],
         })
+        if params[:picture].present?
+          post.picture = params[:picture][:tempfile]
+          post.picture_file_name = params[:picture][:filename]
+        end
 
         if post.save
-          data_vendor = Vendor.find(params[:vendor_id]).data_vendor
-          data_vendor = data_vendor.present? ? ApiHelper.filter_reward_vendor(data_vendor) : nil
-
-          ApiHelper.response(200, 'Post was inserted successfully', data_vendor)
+          ApiHelper.response(200, 'Post was inserted successfully', Vendor.find(params[:vendor_id]).data_vendor)
         else
           ApiHelper.response(500, 'Post was inserted unsuccessfully')
         end
