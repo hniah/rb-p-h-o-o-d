@@ -1,5 +1,6 @@
 class DataVendor < ActiveRecord::Base
   belongs_to :vendor, inverse_of: :data_vendor
+  validates  :vendor_id,         presence: true
 
   DEFAULT_URL = ''
   PATH = ':rails_root/public/:class/:attachment/:id/:style_:basename.:extension'

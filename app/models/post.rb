@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   belongs_to :vendor
   belongs_to :consumer
 
+  validates  :consumer_id,       presence: true
+  validates  :vendor_id,         presence: true
   enumerize :social_type, in: [:facebook, :instagram]
 
   DEFAULT_URL = ''
