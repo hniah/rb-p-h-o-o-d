@@ -17,7 +17,7 @@ end
 
 puts '==Creating vendor =='
 vendors = Vendor.all
-if vendors.count < 100
+if vendors.count < 50
   (1..100).each do |i|
     Vendor.create(
         name: "Vendor #{i}",
@@ -32,4 +32,10 @@ if vendors.count < 100
         latitude: '1.3233667',
     )
   end
+end
+
+puts '==Creating data vendor =='
+vendors = Vendor.all
+vendors.each do |vendor|
+  DataVendor.create(vendor_id: vendor.id,reward_detail: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt', reward_image: '')
 end
