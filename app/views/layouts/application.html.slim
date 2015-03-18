@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    - if content_for?(:title)
+      = yield :title
+    - else
+      title GoInvest
+    meta content='width=1200, initial-scale=1' name='viewport'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+
+    = javascript_include_tag '//www.google.com/jsapi', type: 'text/javascript'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => false
+    = csrf_meta_tags
+  body
+    = flash_messages
+    #header
+      .top-header
+        .container
+          = render partial: 'layouts/header'
+      .navbar
+        .container
+    #wrap-main-content
+      .container
+        .row
+          .col-md-12
+            = yield
+    #wrap-footer
+      = render partial: 'layouts/footer'
+    = content_for?(:internal_javascript) ? yield(:internal_javascript) : nil
