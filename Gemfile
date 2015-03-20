@@ -65,3 +65,5 @@ group :development, :test do
   gem 'capybara' # add "require 'capybara/rspec'" to spec_helper
   gem 'dotenv-rails'
 end
+
+gem 'rails_12factor', group: :production
