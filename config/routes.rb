@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#home'
 
+  resources :pages, only: [:show]
+  get 'help_support'  => 'pages#help_support'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
