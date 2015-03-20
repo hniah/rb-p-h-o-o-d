@@ -24,7 +24,7 @@ if vendors.count < 50
         email: "vendor#{i}@example.com",
         password: '123123123',
         address:  'Somewhere in Singapore',
-        description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        description:'The best restaurants, bars and hawkers to eat, drink and be see at. Recipes to try, interviews with food personalities and the latest food news.',
         phone: '6652-3568',
         fax:  '6652-3578',
         picture: '',
@@ -37,5 +37,5 @@ end
 puts '==Creating data vendor =='
 vendors = Vendor.all
 vendors.each do |vendor|
-  DataVendor.create(vendor_id: vendor.id,reward_detail: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt', reward_image: '')
+  DataVendor.create(vendor_id: vendor.id,reward_detail: 'You got a discount of 20% for the foods', reward_image: '')
 end
