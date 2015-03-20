@@ -1,6 +1,6 @@
 h2
   | Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+= simple_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = devise_error_messages!
   = f.input :email
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
@@ -8,14 +8,19 @@ h2
       | Currently waiting confirmation for: #{resource.unconfirmed_email}
   = f.input :name
   = f.input :address
-  = f.input :longitude
-  = f.input :latitude
+  = f.input :longitude, disabled: true
+  = f.input :latitude, disabled: true
   = f.input :phone
   = f.input :fax
   = f.input :picture
   - if resource.picture.exists?
     = image_tag resource.picture.url(:thumb)
   = f.input :description
+  = f.fields_for :data_vendor do |d|
+    = d.input :reward_detail
+    = d.input :reward_image
+    - if resource.data_vendor.reward_image.exists?
+      = image_tag resource.data_vendor.reward_image.url(:thumb)
   = f.input :password, hint: "(leave blank if you don't want to change it)"
   = f.input :password_confirmation
   = f.input :current_password, hint: '(we need your current password to confirm your changes)'
