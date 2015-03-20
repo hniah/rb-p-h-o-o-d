@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:show]
   get 'help_support'  => 'pages#help_support'
+
+  resource :vendor , only: [:sharing] do
+      get 'sharing'
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

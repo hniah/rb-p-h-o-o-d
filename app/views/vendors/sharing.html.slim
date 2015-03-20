@@ -1,0 +1,11 @@
+#consumer_sharing_container.col-md-12
+  h1 Consumer sharing
+  - if @shares.present?
+    .list-of-shares.row
+      - @shares.each do |share|
+        div.col-sm-2
+          div.photo
+            = image_tag(share.picture.url(:thumb), class: 'img-responsive')
+          div.message
+            = share.message
+
