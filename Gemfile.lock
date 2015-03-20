@@ -320,6 +320,7 @@ DEPENDENCIES
   grape
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form
   paperclip (~> 4.2)
   pg
   rails (= 4.2.0)
