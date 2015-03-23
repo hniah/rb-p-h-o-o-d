@@ -13,7 +13,13 @@ class ApiHelper
     filter['fax'] = vendor.fax
     filter['description'] = vendor.description
     filter['phone'] = vendor.phone
-    filter['picture'] = vendor.picture.url(:thumb)
+
+    if vendor.picture.present?
+      filter['picture'] = vendor.picture.url(:thumb)
+    else
+      filter['picture'] = ''
+    end
+
     filter['longitude'] = vendor.longitude
     filter['latitude'] = vendor.latitude
     return filter
@@ -23,7 +29,12 @@ class ApiHelper
     filter = {}
     filter['id'] = data_vendor.id
     filter['reward_detail'] = data_vendor.reward_detail
-    filter['reward_image'] = data_vendor.reward_image
+
+    if data_vendor.reward_image.present?
+      filter['reward_image'] = data_vendor.reward_image
+    else
+      filter['reward_image'] = ''
+    end
     return filter
   end
 end

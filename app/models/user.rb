@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  DEFAULT_URL = ''
+  DEFAULT_URL = '/images/users/picture/:style/missing.png'
   PATH = ':rails_root/public/:class/:attachment/:id/:style_:basename.:extension'
   VALIDATE_SIZE = { in: 0..1.megabytes, message: 'Photo size too large. Please limit to 1 mb.' }
   has_attached_file :picture,
