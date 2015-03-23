@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   get 'help_support'  => 'pages#help_support'
 
-  resource :vendor , only: [:sharing] do
+  resource :vendor , only: [:sharing, :show] do
       get 'sharing'
   end
   # Example of regular route:

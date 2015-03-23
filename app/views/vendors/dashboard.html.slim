@@ -1,0 +1,52 @@
+#dashboard-container-page
+  h1 Dashboard
+  .wrap-dashboard
+    .data-vendor
+      .description.panel.panel-info
+        .panel-heading
+          h3.panel-title Info
+        .panel-body
+          .photo.col-md-4
+            = image_tag @vendor.picture.url(:large), class: 'img-responsive'
+
+          .vendor-info.col-md-8
+            .email.item
+              span.lbl Email:
+              = @vendor.email
+            .name.item
+              span.lbl Name:
+              = @vendor.name
+            .address.item
+              span.lbl Address:
+              = @vendor.address
+            .phone.item
+              span.lbl Phone:
+              = @vendor.phone
+            .fax.item
+              span.lbl Fax:
+              = @vendor.fax
+            .total_sharing.item
+              span.lbl Total of sharing:
+              = @total_sharing
+            .edit_account.item
+              = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-default'
+    .row
+      .data-vendor.col-md-12
+        .description.panel.panel-info
+          .panel-heading
+            h3.panel-title Description
+          .panel-body
+            = @vendor.description
+
+        .wrap-reward.panel.panel-info
+          .panel-heading
+            h3.panel-title Reward
+          .panel-body.row
+            .reward_image.col-md-4
+              = image_tag @vendor.data_vendor.reward_image.url(:large), class: 'img-responsive'
+            .reward_detail.col-md-8
+              =@vendor.data_vendor.reward_detail
+
+
+
+
