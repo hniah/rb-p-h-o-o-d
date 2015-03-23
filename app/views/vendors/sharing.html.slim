@@ -3,9 +3,14 @@
   - if @shares.present?
     .list-of-shares.row
       - @shares.each do |share|
-        div.col-sm-2
+        div.col-md-3
           div.photo
-            = image_tag(share.picture.url(:thumb), class: 'img-responsive')
+            = image_tag share.picture.url(:large), class: 'img-responsive'
+          div.by
+            span By:
+            = share.consumer.email
           div.message
             = share.message
 
+    .wrap-pagination
+      = paginate @shares, :theme => 'twitter-bootstrap-3'

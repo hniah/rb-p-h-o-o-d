@@ -1,0 +1,18 @@
+#consumer_sharing_container{
+  .list-of-shares{
+    .by{
+      font-style: italic;
+      color:#7e7d7d;
+      margin-bottom: 5px;
+      span{
+        color:#6e6d6d;
+      }
+    }
+  }
+  div.wrap-pagination{
+    text-align: center;   display: block;
+    ul.pagination{
+      display: inline-block;
+    }
+  }
+}
