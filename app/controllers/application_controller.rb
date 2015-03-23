@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(Admin)
       rails_admin_path
     else
-      root_path
+      vendor_path
     end
   end
 

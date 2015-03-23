@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  paginates_per 3
+  paginates_per 16
   extend Enumerize
   belongs_to :vendor
   belongs_to :consumer
