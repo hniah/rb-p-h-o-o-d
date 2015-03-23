@@ -37,6 +37,8 @@ gem 'rails_utils'
 
 gem 'simple_form'
 gem 'nested_form'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

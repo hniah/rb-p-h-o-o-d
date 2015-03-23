@@ -57,6 +57,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.4)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -313,6 +316,7 @@ DEPENDENCIES
   aws-sdk (~> 1.5.7)
   better_errors
   binding_of_caller
+  bootstrap-kaminari-views
   bootstrap-sass (~> 3.3.4)
   byebug
   capybara
@@ -325,6 +329,7 @@ DEPENDENCIES
   grape
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   nested_form
   paperclip (~> 4.2)
   pg
