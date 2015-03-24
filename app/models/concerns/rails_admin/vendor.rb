@@ -12,10 +12,8 @@ module Concerns::RailsAdmin::Vendor
         field :address
         field :phone
         field :fax
+        field :reward_detail
         field :picture
-        field :longitude
-        field :latitude
-        field :data_vendor
       end
 
       list do
@@ -33,10 +31,7 @@ module Concerns::RailsAdmin::Vendor
         field :address
         field :phone
         field :fax
-
         field :description
-        field :longitude
-        field :latitude
       end
     end
   end

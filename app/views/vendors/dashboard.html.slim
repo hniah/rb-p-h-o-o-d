@@ -28,8 +28,6 @@
             .total_sharing.item
               span.lbl Total of sharing:
               = @total_sharing
-            .edit_account.item
-              = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-default'
     .row
       .data-vendor.col-md-12
         .description.panel.panel-info
@@ -41,11 +39,8 @@
         .wrap-reward.panel.panel-info
           .panel-heading
             h3.panel-title Reward
-          .panel-body.row
-            .reward_image.col-md-4
-              = image_tag @vendor.data_vendor.reward_image.url(:large), class: 'img-responsive'
-            .reward_detail.col-md-8
-              =@vendor.data_vendor.reward_detail
+          .panel-body.reward_detail
+              =@vendor.reward_detail
 
 
 

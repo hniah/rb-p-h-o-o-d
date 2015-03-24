@@ -12,8 +12,6 @@ module Concerns::RailsAdmin::User
         field :address
         field :phone
         field :fax
-        field :longitude
-        field :latitude
         field :type
       end
 
@@ -35,8 +33,6 @@ module Concerns::RailsAdmin::User
         field :fax
 
         field :description
-        field :longitude
-        field :latitude
         field :type
       end
     end
