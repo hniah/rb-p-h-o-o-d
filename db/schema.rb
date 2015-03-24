@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324085809) do
+ActiveRecord::Schema.define(version: 20150324091931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,15 +21,6 @@ ActiveRecord::Schema.define(version: 20150324085809) do
     t.string "name"
     t.string "device_token"
     t.string "platform"
-  end
-
-  create_table "data_vendors", force: :cascade do |t|
-    t.text     "reward_detail"
-    t.string   "reward_image_file_name"
-    t.string   "reward_image_content_type"
-    t.integer  "reward_image_file_size"
-    t.datetime "reward_image_updated_at"
-    t.integer  "vendor_id"
   end
 
   create_table "posts", force: :cascade do |t|
