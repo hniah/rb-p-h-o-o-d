@@ -28,14 +28,7 @@ if vendors.count < 50
         phone: '6652-3568',
         fax:  '6652-3578',
         picture: '',
-        longitude: '103.8492009',
-        latitude: '1.3233667',
+        reward_detail: 'You got a discount of 20% for the foods'
     )
   end
-end
-
-puts '==Creating data vendor =='
-vendors = Vendor.all
-vendors.each do |vendor|
-  DataVendor.create(vendor_id: vendor.id,reward_detail: 'You got a discount of 20% for the foods', reward_image: '')
 end
