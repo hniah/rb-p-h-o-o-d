@@ -13,6 +13,7 @@ module Concerns::RailsAdmin::Vendor
         field :fax
         field :reward_detail
         field :picture
+        field :locations
       end
 
       list do
