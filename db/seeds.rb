@@ -23,7 +23,6 @@ if vendors.count < 50
         name: "Vendor #{i}",
         email: "vendor#{i}@example.com",
         password: '123123123',
-        address:  'Somewhere in Singapore',
         description:'The best restaurants, bars and hawkers to eat, drink and be see at. Recipes to try, interviews with food personalities and the latest food news.',
         phone: '6652-3568',
         fax:  '6652-3578',
@@ -31,4 +30,11 @@ if vendors.count < 50
         reward_detail: 'You got a discount of 20% for the foods'
     )
   end
+end
+
+puts '==Add locations to vendor=='
+vendors = Vendor.all
+vendors.each do |vendor|
+  Location.create(vendor_id: vendor.id, address: '10 Eunos Road 8 #05-33 Singapore')
+  Location.create(vendor_id: vendor.id, address: 'Blk 35 Mandalay Road # 13-37 Mandalay Towers Singapore')
 end
