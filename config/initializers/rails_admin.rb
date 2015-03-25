@@ -31,4 +31,6 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.included_models= [Admin, Vendor, Consumer, Post, Suggestion, Location]
 end

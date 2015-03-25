@@ -3,11 +3,7 @@ module Concerns::RailsAdmin::Location
 
   included do
     rails_admin do
-      edit do
-        field :address
-        field :latitude
-        field :longitude
-      end
+
     end
   end
 end
