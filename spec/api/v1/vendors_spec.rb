@@ -18,7 +18,7 @@ RSpec.describe V1::Vendors do
 
     it 'return reward of vendor' do
       get '/api/v1/vendors/'+vendor.id.to_s+'/reward', {api_key: ENV['API_KEY']}
-      expect(reward['reward_detail']).to eq vendor.data_vendor.reward_detail
+      expect(reward['reward_detail']).to eq vendor.reward_detail
     end
   end
 end

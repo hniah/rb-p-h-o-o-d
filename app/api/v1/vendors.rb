@@ -19,7 +19,7 @@ module V1
       end
       get ':id/reward' do
 
-        data = DataVendor.find_by_vendor_id(params[:id])
+        data = Vendor.find(params[:id])
         if data.present?
           ApiHelper.response(200, '', ApiHelper.filter_reward_vendor(data))
         else
