@@ -4,14 +4,12 @@ FactoryGirl.define do
     sequence(:email) { |n| "vendor-#{n}@example.com" }
     password '123123123'
     description 'Starbucks ia a wonderful cafe'
-    address '4 Tampines Central 5 #01-50, Tampines Mall'
+    reward_detail 'You got a discount of 20% for the foods'
     phone '6787 3640'
-    longitude 1.355223
-    latitude 103.928737
 
 
   end
   after(:create)  do |vendor|
-    DataVendor.create(reward_detail: 'Lorem', reward_image: '', vendor_id: vendor.id)
+    Location.create(address: '4 Tampines Central 5 #01-50, Tampines Mall',latitude: '103.928737', longitude: '1.355223', vendor_id: vendor.id)
   end
 end

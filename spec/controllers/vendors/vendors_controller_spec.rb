@@ -16,8 +16,10 @@ describe VendorsController do
 
     it 'render vendor info' do
       do_request
+
       expect(response).to render_template :dashboard
       expect(assigns(:total_sharing)).to eq 1
+      expect(assigns(:locations)).not_to be_nil
       expect(assigns(:vendor)).to_not be_nil
     end
   end
