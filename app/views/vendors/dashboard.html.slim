@@ -8,7 +8,6 @@
         .panel-body
           .photo.col-md-4
             = image_tag @vendor.picture.url(:large), class: 'img-responsive'
-
           .vendor-info.col-md-8
             .email.item
               span.lbl Email:
@@ -16,9 +15,6 @@
             .name.item
               span.lbl Name:
               = @vendor.name
-            .address.item
-              span.lbl Address:
-              = @vendor.address
             .phone.item
               span.lbl Phone:
               = @vendor.phone
@@ -30,6 +26,16 @@
               = @total_sharing
     .row
       .data-vendor.col-md-12
+        .description.panel.panel-info
+          .panel-heading
+            h3.panel-title Locations
+          .panel-body
+            - if @locations.present?
+              - @locations.each do |location|
+                .location
+                  |-
+                  = location.address
+
         .description.panel.panel-info
           .panel-heading
             h3.panel-title Description

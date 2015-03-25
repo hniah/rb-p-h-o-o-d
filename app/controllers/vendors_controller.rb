@@ -4,6 +4,7 @@ class VendorsController < ApplicationController
   def show
     @vendor = current_user
     @total_sharing = Post.where(vendor_id: @vendor.id).count
+    @locations = @vendor.locations
     render :dashboard
   end
 
