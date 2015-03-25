@@ -13,13 +13,22 @@ List of API Hoosh Project.
                       id: 1,
                       email: "vendor1@yahoo.com",
                       name: "Vendor1",
-                      address: "25 Main St, Cooperstown, NY",
                       phone: "321321321123",
                       fax: "312321321",
-                      description: "dasdadsa",
+                      description: "The best restaurants, bars and hawkers to eat, drink and be see at. Recipes to try, interviews with food personalities and the latest food news.",
                       picture: "",
-                      longitude: "-74.922749",
-                      latitude: "42.700124"
+                      locations: [
+                                     {
+                                         address: "10 Eunos Road 8 #05-33 Singapore",
+                                         longitude: "103.894819",
+                                         latitude: "1.319291"
+                                     },
+                                     {
+                                         address: "Blk 35 Mandalay Road # 13-37 Mandalay Towers Singapore",
+                                         longitude: "103.8491617",
+                                         latitude: "1.3236971"
+                                     }
+                                 ]
                   }
                }
 
@@ -33,8 +42,7 @@ List of API Hoosh Project.
                       message: "",
                       data: {
                           id: 1,
-                          reward_detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                          reward_image: "http://hoosh-develop.s3.amazonaws.com/Users/anthonyfwz/workspace/rubys/hoosh/public/data_vendors/reward_images/1/original_hollywood5.jpg?1426132200"
+                          reward_detail: "You got a discount of 20% for the foods",
                       }
                   }
         + Fail: { error_code: 404, message: "Not found", data: null }
@@ -75,9 +83,9 @@ List of API Hoosh Project.
         + Success: {
                         error_code: 200,
                         message: "Post was inserted successfully",
-                        data:{  id: 1,
-                                reward_detail: "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                                reward_image: "http://hoosh-develop.s3.amazonaws.com/Users/anthonyfwz/workspace/rubys/hoosh/public/data_vendors/reward_images/1/original_hollywood5.jpg?1426132200"
+                        data:{
+                            id: 1,
+                            reward_detail: "You got a discount of 20% for the foods",
                         }
                    }
         + Fail: { error_code: 500, message: "Post was inserted unsuccessfully", data: null }
