@@ -9,7 +9,6 @@ module Concerns::RailsAdmin::User
         field :password_confirmation
         field :name
         field :description
-        field :address
         field :phone
         field :fax
         field :type
@@ -19,7 +18,6 @@ module Concerns::RailsAdmin::User
         field :id
         field :email
         field :name
-        field :address
         field :phone
         field :type
       end
@@ -28,7 +26,6 @@ module Concerns::RailsAdmin::User
         field :id
         field :email
         field :name
-        field :address
         field :phone
         field :fax
 

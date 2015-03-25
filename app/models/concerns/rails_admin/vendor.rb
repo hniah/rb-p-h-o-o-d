@@ -9,7 +9,6 @@ module Concerns::RailsAdmin::Vendor
         field :password_confirmation
         field :name
         field :description
-        field :address
         field :phone
         field :fax
         field :reward_detail
@@ -20,7 +19,6 @@ module Concerns::RailsAdmin::Vendor
         field :id
         field :email
         field :name
-        field :address
         field :phone
       end
 
@@ -28,7 +26,6 @@ module Concerns::RailsAdmin::Vendor
         field :id
         field :email
         field :name
-        field :address
         field :phone
         field :fax
         field :description

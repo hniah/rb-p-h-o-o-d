@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 20150324091931) do
     t.datetime "updated_at"
     t.string   "name"
     t.text     "description"
-    t.string   "address"
     t.string   "phone"
     t.string   "fax"
     t.string   "type"
