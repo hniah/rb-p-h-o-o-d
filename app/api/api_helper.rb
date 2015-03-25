@@ -8,7 +8,6 @@ class ApiHelper
     filter['id'] = vendor.id
     filter['email'] = vendor.email
     filter['name'] = vendor.name
-    filter['address'] = vendor.address
     filter['phone'] = vendor.phone
     filter['fax'] = vendor.fax
     filter['description'] = vendor.description
@@ -20,8 +19,18 @@ class ApiHelper
       filter['picture'] = ''
     end
 
-    filter['longitude'] = vendor.longitude
-    filter['latitude'] = vendor.latitude
+    filter['locations'] = []
+    locations = vendor.locations
+    if locations.present?
+      locations.each do |location|
+        tmp = {}
+        tmp['address'] = location.address
+        tmp['longitude'] = location.longitude
+        tmp['latitude'] = location.latitude
+        filter['locations'] << tmp
+      end
+    end
+
     return filter
   end
 
@@ -29,12 +38,6 @@ class ApiHelper
     filter = {}
     filter['id'] = data_vendor.id
     filter['reward_detail'] = data_vendor.reward_detail
-
-    if data_vendor.reward_image.present?
-      filter['reward_image'] = data_vendor.reward_image
-    else
-      filter['reward_image'] = ''
-    end
     return filter
   end
 end
