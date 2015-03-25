@@ -51,7 +51,7 @@ module V1
         end
 
         if post.save
-          ApiHelper.response(200, 'Post was inserted successfully', Vendor.find(params[:vendor_id]).data_vendor)
+          ApiHelper.response(200, 'Post was inserted successfully', Vendor.find(params[:vendor_id]).reward_detail)
         else
           ApiHelper.response(500, 'Post was inserted unsuccessfully')
         end
