@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324091931) do
+ActiveRecord::Schema.define(version: 20150325020756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20150324091931) do
     t.string "name"
     t.string "device_token"
     t.string "platform"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer "vendor_id"
+    t.string  "address"
+    t.string  "latitude"
+    t.string  "longitude"
   end
 
   create_table "posts", force: :cascade do |t|
