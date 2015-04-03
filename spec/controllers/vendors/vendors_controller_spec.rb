@@ -4,7 +4,7 @@ describe VendorsController do
 
   let(:vendor) { create :vendor}
   let(:consumer) { create :consumer}
-  let!(:post) {Post.create(consumer_id:consumer.id, vendor_id: vendor.id, message: 'I like this food', social_type: 'facebook')}
+  let!(:post) {Post.create(consumer_id: consumer.id, location_id:vendor.locations.first.id,  message: 'I like this food', social_type: 'facebook')}
   before do
     sign_in vendor
   end

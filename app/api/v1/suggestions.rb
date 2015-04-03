@@ -4,17 +4,19 @@ module V1
       desc 'Create a new suggest'
 
       params do
-        requires :name, type: String
+        requires :consumer_name, type: String
+        requires :merchant_name, type: String
+        requires :merchant_location, type: String
         requires :message, type:String
-        requires :vendor_id, type:Integer
       end
 
       post do
-        suggestion = Suggestion.new({
-            name:params[:name],
+        suggestion = Suggestion.new(
+            consumer_name:params[:consumer_name],
+            merchant_name:params[:merchant_name],
+            merchant_location:params[:merchant_location],
             message:params[:message],
-            vendor_id:params[:vendor_id]
-        })
+        )
         if suggestion.save
           ApiHelper.response(200, 'Suggestion has inserted successfully')
         else

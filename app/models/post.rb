@@ -1,12 +1,12 @@
 class Post < ActiveRecord::Base
   paginates_per 16
   extend Enumerize
-  belongs_to :vendor
   belongs_to :consumer
+  belongs_to :location
 
-  validates  :consumer_id,       presence: true
-  validates  :vendor_id,         presence: true
-  enumerize :social_type, in: [:facebook, :instagram]
+  validates  :location_id,         presence: true
+  validates  :consumer_id,         presence: true
+  enumerize :social_type, in: [:facebook, :instagram, :both]
 
   DEFAULT_URL = ''
   PATH = ':rails_root/public/:class/:attachment/:id/:style_:basename.:extension'

@@ -23,13 +23,12 @@ RSpec.describe V1::Consumers do
 
   describe 'POST /social' do
     let(:reward) { JSON.parse(response.body)['data'] }
-    let!(:consumer) { create :consumer}
     let!(:vendor) { create :vendor}
 
     it 'return reward of vendor' do
-      post '/api/v1/consumer/social', {api_key: ENV['API_KEY'], consumer_id: consumer.id, vendor_id: vendor.id, message: 'Testing post', social_type: :facebook, picture: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test-small.png'), 'images/png')}
+      post '/api/v1/consumer/social', {api_key: ENV['API_KEY'], location_id:vendor.locations.first.id,  message: 'What do you think', social_type: :facebook, picture: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test-small.png'), 'images/png'), device_token:'321323213213', platform: 'andriod'}
 
-      expect(Post.first.message).to eq 'Testing post'
+      expect(Post.first.message).to eq 'What do you think'
       expect(reward).to eq vendor.reward_detail
     end
   end
