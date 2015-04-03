@@ -35,6 +35,6 @@ end
 puts '==Add locations to vendor=='
 vendors = Vendor.all
 vendors.each do |vendor|
-  Location.create(vendor_id: vendor.id, address: '10 Eunos Road 8 #05-33 Singapore')
-  Location.create(vendor_id: vendor.id, address: 'Blk 35 Mandalay Road # 13-37 Mandalay Towers Singapore')
+  Location.create(vendor_id: vendor.id, name: 'Singapore food', address: '10 Eunos Road 8 #05-33 Singapore')
+  Location.create(vendor_id: vendor.id, name: 'Singapore noodle', address: 'Blk 35 Mandalay Road # 13-37 Mandalay Towers Singapore')
 end
