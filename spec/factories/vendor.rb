@@ -5,6 +5,7 @@ FactoryGirl.define do
     password '123123123'
     description 'Starbucks ia a wonderful cafe'
     reward_detail 'You got a discount of 20% for the foods'
+    fax '092 2922'
     phone '6787 3640'
 
 
