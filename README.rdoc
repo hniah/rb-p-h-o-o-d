@@ -19,11 +19,15 @@ List of API Hoosh Project.
                       picture: "",
                       locations: [
                                      {
+                                         id: 1,
+                                         name: "Singpore food"
                                          address: "10 Eunos Road 8 #05-33 Singapore",
                                          longitude: "103.894819",
                                          latitude: "1.319291"
                                      },
                                      {
+                                         id: 2,
+                                         name: "Singpore noodle"
                                          address: "Blk 35 Mandalay Road # 13-37 Mandalay Towers Singapore",
                                          longitude: "103.8491617",
                                          latitude: "1.3236971"
@@ -33,27 +37,39 @@ List of API Hoosh Project.
                }
 
 
-2. Get reward of vendor
-    - URL: /api/v1/vendors/vendor_id/reward?api_key=...
-    - Ex: /api/v1/vendors/10/reward?api_key=...
+2. Get locations nearest in 1km
+    - URL: /api/v1/vendors/locations?api_key=...
+    - Get params:
+        + latitude: 1.362412
+        + longitude: 103.835896
     - Response
         + Success: {
                       error_code: 200,
                       message: "",
-                      data: {
-                          id: 1,
-                          reward_detail: "You got a discount of 20% for the foods",
-                      }
+                      data: [
+                        {
+                            location_id: 202,
+                            location_name: "Sin Ming Autocare Bfg",
+                            location_address: "176 Sin Ming Dr, #02-05 Sin Ming Autocare Complex, Singapore 575721",
+                            vendor_id: 104,
+                            vendor_email: "vendor99@example.com",
+                            vendor_name: "Vendor 99",
+                            vendor_phone: "6652-3568",
+                            vendor_fax: "6652-3578",
+                            vendor_description: "The best restaurants, bars and hawkers to eat, drink and be see at. Recipes to try, interviews with food personalities and the latest food news.",
+                            vendor_picture: "http://hoosh-develop.s3.amazonaws.com/Users/anthonyfwz/workspace/rubys/hoosh/public/vendors/pictures/104/thumb_food2.jpg?1427188347"
+                        }
+                      ]
                   }
-        + Fail: { error_code: 404, message: "Not found", data: null }
 
 
 3. Post suggestion
     - URL: /api/v1/suggestion?api_key=...
     - Post params:
-        + name
+        + consumer_name
+        + merchant_name
+        + merchant_location
         + message
-        + vendor_id
     - Response
         + Success: { error_code: 200, message: "Suggestion has inserted successfully", data: null }
         + Fail: { error_code: 500, message: "Suggestion has inserted unsuccessfullyd", data: null }
@@ -74,8 +90,9 @@ List of API Hoosh Project.
 5. Insert social post
     - URL: /api/v1/consumer/social?api_key...
     - Post params:
-        + consumer_id
-        + vendor_id
+        + location_id
+        + device_token
+        + platform
         + message
         + social_type
         + picture
