@@ -24,6 +24,7 @@ class ApiHelper
     if locations.present?
       locations.each do |location|
         tmp = {}
+        tmp['id'] = location.id
         tmp['address'] = location.address
         tmp['longitude'] = location.longitude
         tmp['latitude'] = location.latitude
@@ -38,6 +39,27 @@ class ApiHelper
     filter = {}
     filter['id'] = data_vendor.id
     filter['reward_detail'] = data_vendor.reward_detail
+    return filter
+  end
+
+  def self.format_data_locations(location)
+    filter = {}
+    filter['location_id'] = location.id
+    filter['location_name'] = location.name
+    filter['location_address'] = location.address
+    vendor = location.vendor
+    filter['vendor_id'] = vendor.id
+    filter['vendor_email'] = vendor.email
+    filter['vendor_name'] = vendor.name
+    filter['vendor_phone'] = vendor.phone
+    filter['vendor_fax'] = vendor.fax
+    filter['vendor_description'] = vendor.description
+    filter['vendor_phone'] = vendor.phone
+    if vendor.picture.present?
+      filter['vendor_picture'] = vendor.picture.url(:thumb)
+    else
+      filter['vendor_picture'] = ''
+    end
     return filter
   end
 end

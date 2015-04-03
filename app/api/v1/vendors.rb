@@ -26,6 +26,17 @@ module V1
           ApiHelper.response(404, 'Not found')
         end
       end
+
+
+      desc 'Get locations nearest in 1 kilometer'
+      params do
+        requires :latitude, type: Float
+        requires :longitude, type: Float
+      end
+      get 'locations' do
+        @location = Location.get_location_nearest(params[:latitude],params[:longitude])
+        ApiHelper.response(200, '', @location)
+      end
     end
   end
 end
