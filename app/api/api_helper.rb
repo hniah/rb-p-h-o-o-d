@@ -25,6 +25,7 @@ class ApiHelper
       locations.each do |location|
         tmp = {}
         tmp['id'] = location.id
+        tmp['name'] = location.name
         tmp['address'] = location.address
         tmp['longitude'] = location.longitude
         tmp['latitude'] = location.latitude
