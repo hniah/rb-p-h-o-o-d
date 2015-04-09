@@ -9,8 +9,9 @@ class Location < ActiveRecord::Base
   def self.get_location_nearest(latitude, longitude)
     @filter_locations = []
     @locations = Location.all
+    nearest_limit = ENV['KM_LIMIT_NEAREST'].to_i
     @locations.each do |location|
-      if self.get_distance_from_lat_lon_in_km(location.latitude.to_f, location.longitude.to_f, latitude, longitude) <= 1
+      if self.get_distance_from_lat_lon_in_km(location.latitude.to_f, location.longitude.to_f, latitude, longitude) <= nearest_limit
         @filter_locations << ApiHelper.format_data_locations(location)
 
       end
