@@ -5,7 +5,9 @@ module Concerns::RailsAdmin::User
     rails_admin do
       edit do
         field :email
-        field :password
+        field :password do
+          required false
+        end
         field :password_confirmation
         field :name
         field :description

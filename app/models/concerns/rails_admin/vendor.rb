@@ -5,12 +5,16 @@ module Concerns::RailsAdmin::Vendor
     rails_admin do
       edit do
         field :email
-        field :password
+        field :password do
+          required false
+        end
         field :password_confirmation
         field :name
-        field :description
+        field :address
         field :phone
         field :fax
+        field :website
+        field :description
         field :reward_detail
         field :picture
         field :locations
