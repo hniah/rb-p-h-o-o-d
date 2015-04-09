@@ -10,13 +10,15 @@ class ApiHelper
     filter['name'] = vendor.name
     filter['phone'] = vendor.phone
     filter['fax'] = vendor.fax
+    filter['address'] = vendor.address
+    filter['website'] = vendor.website
     filter['description'] = vendor.description
     filter['phone'] = vendor.phone
 
     if vendor.picture.present?
       filter['picture'] = vendor.picture.url(:thumb)
     else
-      filter['picture'] = ''
+      filter['picture'] = ENV['ROOT_URL'].to_s+vendor.picture.url(:thumb)
     end
 
     filter['locations'] = []
@@ -54,12 +56,14 @@ class ApiHelper
     filter['vendor_name'] = vendor.name
     filter['vendor_phone'] = vendor.phone
     filter['vendor_fax'] = vendor.fax
+    filter['vendor_address'] = vendor.address
+    filter['vendor_website'] = vendor.website
     filter['vendor_description'] = vendor.description
     filter['vendor_phone'] = vendor.phone
     if vendor.picture.present?
       filter['vendor_picture'] = vendor.picture.url(:thumb)
     else
-      filter['vendor_picture'] = ''
+      filter['vendor_picture'] = ENV['ROOT_URL'].to_s+vendor.picture.url(:thumb)
     end
     return filter
   end
