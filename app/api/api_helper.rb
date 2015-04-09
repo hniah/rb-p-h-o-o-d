@@ -38,10 +38,11 @@ class ApiHelper
     return filter
   end
 
-  def self.filter_reward_vendor(data_vendor)
+  def self.filter_reward_vendor(reward, post)
     filter = {}
-    filter['id'] = data_vendor.id
-    filter['reward_detail'] = data_vendor.reward_detail
+    filter['location_id'] = post.location_id
+    filter['reward_detail'] = reward
+    filter['expired_date'] = post.expired_reward.strftime('%d %b %Y %I:%M %p')
     return filter
   end
 

@@ -25,6 +25,7 @@ module V1
             location_id:  params[:location_id],
             message:      params[:message],
             social_type:  params[:social_type],
+            expired_reward: (DateTime.now + 2.hours)
         )
 
         if params[:picture].present?
@@ -33,7 +34,7 @@ module V1
         end
 
         if post.save
-          ApiHelper.response(200, 'Post was inserted successfully', Location.find(params[:location_id]).vendor.reward_detail)
+          ApiHelper.response(200, 'Post was inserted successfully', ApiHelper.filter_reward_vendor(Location.find(params[:location_id]).vendor.reward_detail, post))
         else
           ApiHelper.response(500, 'Post was inserted unsuccessfully')
         end

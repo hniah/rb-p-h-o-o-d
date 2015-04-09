@@ -12,15 +12,6 @@ RSpec.describe V1::Vendors do
     end
   end
 
-  describe 'GET /reward' do
-    let!(:vendor)    { create(:vendor) }
-    let(:reward) { JSON.parse(response.body)['data'] }
-
-    it 'return reward of vendor' do
-      get '/api/v1/vendors/'+vendor.id.to_s+'/reward', {api_key: ENV['API_KEY']}
-      expect(reward['reward_detail']).to eq vendor.reward_detail
-    end
-  end
 
   describe 'GET /locations nearest in 1 kilometer' do
     let!(:vendors) { create_list(:vendor, 3) }

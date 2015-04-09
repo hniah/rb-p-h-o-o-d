@@ -12,22 +12,6 @@ module V1
         ApiHelper.response(200, '', vendors_filter)
       end
 
-
-      desc 'Get reward of vendor'
-      params do
-        requires :id, type: Integer
-      end
-      get ':id/reward' do
-
-        data = Vendor.find(params[:id])
-        if data.present?
-          ApiHelper.response(200, '', ApiHelper.filter_reward_vendor(data))
-        else
-          ApiHelper.response(404, 'Not found')
-        end
-      end
-
-
       desc 'Get locations nearest in 1 kilometer'
       params do
         requires :latitude, type: Float
