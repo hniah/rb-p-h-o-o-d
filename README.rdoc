@@ -81,6 +81,9 @@ List of API Hoosh Project.
         + location_id
         + device_token
         + platform
+        + consumer_name
+        + consumer_email
+        + consumer_gender
         + message
         + social_type
         + picture
@@ -89,8 +92,10 @@ List of API Hoosh Project.
                         error_code: 200,
                         message: "Post was inserted successfully",
                         data:{
-                            id: 1,
+                            incentive_id: 1,
+                            location_id: 3,
                             reward_detail: "You got a discount of 20% for the foods",
+                            expired_date: "14 Apr 2015 04:41 PM"
                         }
                    }
         + Fail: { error_code: 500, message: "Post was inserted unsuccessfully", data: null }

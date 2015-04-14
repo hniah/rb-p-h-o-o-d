@@ -9,14 +9,20 @@ module V1
         requires :social_type, type:String
         requires :platform, type:String
         requires :device_token, type:String
+        requires :consumer_name, type:String
+        requires :consumer_gender, type:String
+        requires :consumer_email, type:String
       end
 
       post 'social' do
         consumer = Consumer.find_by_device_token(params[:device_token])
         unless consumer.present?
           consumer = Consumer.create(
-                        device_token:params[:device_token],
-                        platform:params[:platform]
+                        email: params[:consumer_email],
+                        name: params[:consumer_name],
+                        gender: params[:consumer_gender],
+                        device_token: params[:device_token],
+                        platform: params[:platform]
                     )
         end
 
